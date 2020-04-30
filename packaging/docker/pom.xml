@@ -17,7 +17,7 @@
 
         <image.registry>quay.io</image.registry>
         <image.name>alfresco/alfresco-share</image.name>
-        <image.tag>latest</image.tag>
+        <image.tag>amp-aps</image.tag>
     </properties>
 
     <dependencies>
@@ -36,6 +36,12 @@
             <groupId>org.alfresco.integrations</groupId>
             <artifactId>alfresco-googledrive-share</artifactId>
             <version>${alfresco.googledocs.version}</version>
+            <type>amp</type>
+        </dependency>
+        <dependency>
+            <groupId>com.alfresco</groupId>
+            <artifactId>aps-action-share</artifactId>
+            <version>1.0</version>
             <type>amp</type>
         </dependency>
     </dependencies>
@@ -121,6 +127,14 @@
                                     <groupId>org.alfresco.integrations</groupId>
                                     <artifactId>alfresco-googledrive-share</artifactId>
                                     <version>${alfresco.googledocs.version}</version>
+                                    <type>amp</type>
+                                    <overWrite>false</overWrite>
+                                    <outputDirectory>${project.build.directory}/amps_share</outputDirectory>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.alfresco</groupId>
+                                    <artifactId>aps-action-share</artifactId>
+                                    <version>1.0</version>
                                     <type>amp</type>
                                     <overWrite>false</overWrite>
                                     <outputDirectory>${project.build.directory}/amps_share</outputDirectory>

@@ -41,7 +41,7 @@
         <dependency>
             <groupId>com.alfresco</groupId>
             <artifactId>aps-action-share</artifactId>
-            <version>1.0</version>
+            <version>6.2.1</version>
             <type>amp</type>
         </dependency>
     </dependencies>
@@ -134,7 +134,7 @@
                                 <artifactItem>
                                     <groupId>com.alfresco</groupId>
                                     <artifactId>aps-action-share</artifactId>
-                                    <version>1.0</version>
+                                    <version>6.2.1</version>
                                     <type>amp</type>
                                     <overWrite>false</overWrite>
                                     <outputDirectory>${project.build.directory}/amps_share</outputDirectory>

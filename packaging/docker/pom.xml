@@ -125,6 +125,14 @@
                                     <overWrite>false</overWrite>
                                     <outputDirectory>${project.build.directory}/amps_share</outputDirectory>
                                 </artifactItem>
+                                <artifactItem>
+                                    <groupId>com.alfresco</groupId>
+                                    <artifactId>aps-action-share</artifactId>
+                                    <version>6.2.1</version>
+                                    <type>amp</type>
+                                    <overWrite>false</overWrite>
+                                    <outputDirectory>${project.build.directory}/amps_share</outputDirectory>
+                                </artifactItem>
                             </artifactItems>
                         </configuration>
                     </execution>

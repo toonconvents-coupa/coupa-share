@@ -30,7 +30,14 @@
          <div class="error">${msg("message.loginautherror")}</div>
          <#else>
          <script type="text/javascript">//<![CDATA[
-            document.cookie = "_alfTest=_alfTest; Path=/;";
+            if(window.self !== window.top)
+            {
+               document.cookie = "_alfTest=_alfTest; Path=/; Secure; SameSite=None";
+            }
+            else
+            {
+               document.cookie = "_alfTest=_alfTest; Path=/;";
+            }
             var cookieEnabled = (document.cookie.indexOf("_alfTest") !== -1);
             if (!cookieEnabled)
             {

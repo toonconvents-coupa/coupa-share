@@ -164,14 +164,14 @@
          expirationdate = new Date();
          expirationdate.setFullYear(expirationdate.getFullYear() + 10);
          
-         document.cookie = "alfLocale=" + locale + ";expires=" + expirationdate.toUTCString() + ";path=/";
+         document.cookie = "alfLocale=" + locale + ";expires=" + expirationdate.toUTCString() + ";path=/" + this.secureAndSameSite();
          
          // set the cookie expiration to 7 days from now (same as SpringSurf).
          expirationdate = new Date();
          expirationdate.setDate(expirationdate.getDate() + 7);
          
          // save the username in a cookie to re-populate the username field after changing language.
-         document.cookie = "alfUsername3=" + encodeURIComponent(username) + ";expires=" + expirationdate.toUTCString() + ";path=" + Alfresco.constants.URL_CONTEXT;
+         document.cookie = "alfUsername3=" + encodeURIComponent(username) + ";expires=" + expirationdate.toUTCString() + ";path=" + Alfresco.constants.URL_CONTEXT + this.secureAndSameSite();
          
          location.reload(true);
       },
@@ -207,7 +207,7 @@
          else
          {
             // Display cookie error
-            document.cookie = "_alfTest=_alfTest; Path=/;";
+            document.cookie = "_alfTest=_alfTest; Path=/;" + this.secureAndSameSite();
             var cookieEnabled = (document.cookie.indexOf("_alfTest") != -1);
             if (cookieEnabled == false)
             {
@@ -227,6 +227,14 @@
                });
             }
          }
+      },
+      function secureAndSameSite()
+      {
+        if(window.self !== window.top)
+        {
+            return  "Secure; SameSite=None";
+        }
+        return "";
       }
    });
 })();

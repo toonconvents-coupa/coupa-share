@@ -115,15 +115,6 @@
 
     <dependencyManagement>
         <dependencies>
-            <!-- Import all dependencyManagement from Alfresco Platform
-            <dependency>
-                <groupId>org.alfresco</groupId>
-                <artifactId>alfresco-parent</artifactId>
-                <version>6.0.</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
--->
             <!-- Override dependencies with the locally defined versions -->
             <dependency>
                 <groupId>org.alfresco</groupId>
